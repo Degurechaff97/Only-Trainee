@@ -18,24 +18,24 @@ $this->addExternalCss($templateFolder."/css/common.css");
             <?=$arResult["FORM_HEADER"]?>
             <div class="contact-form__inputs">
                 <div class="form-group">
-                    <label class="form-label" for="form_text_1">Ваше имя*</label>
-                    <input type="text" id="form_text_1" name="form_text_1" value="<?=$arResult["QUESTIONS"]["form_text_1"]["VALUE"]?>" required>
+                    <label class="form-label" for="form_text_16">Ваше имя*</label>
+                    <input type="text" id="form_text_16" name="form_text_16" value="<?=$arResult["QUESTIONS"]["form_text_16"]["VALUE"]?>" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="form_text_2">Компания/Должность*</label>
-                    <input type="text" id="form_text_2" name="form_text_2" value="<?=$arResult["QUESTIONS"]["form_text_2"]["VALUE"]?>" required>
+                    <label class="form-label" for="form_text_17">Компания/Должность*</label>
+                    <input type="text" id="form_text_17" name="form_text_17" value="<?=$arResult["QUESTIONS"]["form_text_17"]["VALUE"]?>" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="form_email_3">Email*</label>
-                    <input type="email" id="form_email_3" name="form_email_3" value="<?=$arResult["QUESTIONS"]["form_email_3"]["VALUE"]?>" required>
+                    <label class="form-label" for="form_email_18">Email*</label>
+                    <input type="email" id="form_email_18" name="form_email_18" value="<?=$arResult["QUESTIONS"]["form_email_18"]["VALUE"]?>" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="form_text_4">Номер телефона*</label>
-                    <input type="tel" id="form_text_4" name="form_text_4" value="<?=$arResult["QUESTIONS"]["form_text_4"]["VALUE"]?>" required>
+                    <label class="form-label" for="form_text_19">Номер телефона*</label>
+                    <input type="text" id="form_text_19" name="form_text_19" value="<?=$arResult["QUESTIONS"]["form_text_19"]["VALUE"]?>" required>
                 </div>
                 <div class="form-group full-width">
-                    <label class="form-label" for="form_textarea_5">Сообщение</label>
-                    <textarea id="form_textarea_5" name="form_textarea_5"><?=$arResult["QUESTIONS"]["form_textarea_5"]["VALUE"]?></textarea>
+                    <label class="form-label" for="form_textarea_20">Сообщение</label>
+                    <textarea id="form_textarea_20" name="form_textarea_20"><?=$arResult["QUESTIONS"]["form_textarea_20"]["VALUE"]?></textarea>
                 </div>
             </div>
 
