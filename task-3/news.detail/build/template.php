@@ -3,19 +3,43 @@
 $this->addExternalCss($templateFolder."/css/common.css");
 ?>
 
-
 <div class="news-detail">
-    <h1>ЭР-Телеком объявляет финансовые результаты<br>за первое полугодие 2019 года</h1>
-    
-    <p class="news-date">15 авг 2019</p>
+    <h1><?=$arResult["NAME"]?></h1>
 
-    <img src="<?=$templateFolder?>/images/1.jpg" alt="График финансовых результатов" class="news-image">
+    <?if(strlen($arResult["ACTIVE_FROM"])):?>
+        <span class="news-date-time"><?=$arResult["ACTIVE_FROM"]?></span>
+    <?endif;?>
+
+    <?if($arResult["DETAIL_PICTURE"]):?>
+        <div class="news-image">
+            <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" 
+                 alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>" 
+                 title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>">
+        </div>
+    <?endif;?>
 
     <div class="news-text">
-        <p>За первое полугодие 2019 года «ЭР-Телеком Холдинг» показал двузначное увеличение выручки – на 11%, по сравнению с аналогичным периодом прошлого года, что составило 21 438 млн.руб. Прирост произошел в двух бизнес-сегментах – в B2B увеличение на 15%, а в B2C – на 9%.</p>
-
-        <p>Достигнутые результаты наглядно показывают, что развитие компании соответствует заявленной ранее стратегии. Более подробную информацию можно найти в разделе «Инвесторам».</p>
+        <?if(strlen($arResult["DETAIL_TEXT"])>0):?>
+            <?=$arResult["DETAIL_TEXT"];?>
+        <?else:?>
+            <?=$arResult["PREVIEW_TEXT"];?>
+        <?endif?>
     </div>
 
-    <a href="<?=$arResult["LIST_PAGE_URL"]?>">НАЗАД К НОВОСТЯМ</a>
+    <?if(isset($arResult["DISPLAY_PROPERTIES"]) && !empty($arResult["DISPLAY_PROPERTIES"])):?>
+        <div class="news-properties">
+            <?foreach($arResult["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
+                <div class="news-property">
+                    <strong><?=$arProperty["NAME"]?>:</strong> 
+                    <?if(is_array($arProperty["DISPLAY_VALUE"])):?>
+                        <?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
+                    <?else:?>
+                        <?=$arProperty["DISPLAY_VALUE"];?>
+                    <?endif?>
+                </div>
+            <?endforeach;?>
+        </div>
+    <?endif;?>
+
+    <a href="<?=$arResult["LIST_PAGE_URL"]?>" class="news-back-link"><?=GetMessage("RETURN_TO_LIST")?></a>
 </div>
