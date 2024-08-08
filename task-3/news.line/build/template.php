@@ -1,6 +1,13 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?
+$this->addExternalCss($templateFolder."/css/news-line.css");
+?>
 
 <div class="news-line">
-    <span class="news-date-time">15 авг 2019&nbsp;&nbsp;</span>
-    <a href="<?=$arResult["ITEMS"][0]["DETAIL_PAGE_URL"]?>">ЭР-Телеком объявляет финансовые результаты за первое полугодие 2019 года</a>
+	<?foreach($arResult["ITEMS"] as $arItem):?>
+		<div class="news-item">
+			<span class="news-date-time"><?echo $arItem["ACTIVE_FROM"]?></span>
+			<a href="<?echo $arItem["DETAIL_PAGE_URL"]?>" class="news-title"><?echo $arItem["NAME"]?></a>
+		</div>
+	<?endforeach;?>
 </div>
