@@ -67,6 +67,9 @@ class OnlyNewsList extends CBitrixComponent
             $arFilter['IBLOCK_TYPE'] = $this->arParams['IBLOCK_TYPE'];
         }
 
+        if (!empty($this->arParams['FILTER_FIELDS']) && is_array($this->arParams['FILTER_FIELDS'])) {
+            $arFilter = array_merge($arFilter, $this->arParams['FILTER_FIELDS']);
+
         $arSelect = [
             'ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT', 'DETAIL_PAGE_URL', 'IBLOCK_SECTION_ID',
         ];
