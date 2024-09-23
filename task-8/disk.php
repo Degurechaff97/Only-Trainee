@@ -9,7 +9,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 use Arhitector\Yandex\Disk;
 use Arhitector\Yandex\Client\Exception\UnauthorizedException;
 
-$token = 'y0_AgAAAAAHkO5pAAx7aQAAAAER2lOTAACMUythNvpKGqx5x4tqXPB-yR07uA';
+$token = 'add your token here';
 
 function isTxtFile($filename) {
     return strtolower(pathinfo($filename, PATHINFO_EXTENSION)) === 'txt';
